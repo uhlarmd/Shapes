@@ -3,18 +3,17 @@ require "gosu"
 
 class Rect < Shape
 
-def initialize(x, y, fill, stroke, width, height, z, mode)
+def initialize(x, y, width, height, z, mode)
 
-		@x = x
-		@y = y
-		@fill = Gosu::Color.argb(0xff_00ff00)
-		@stroke = Gosu::Color.argb(0xff_00ffff)
+		@x = y
+		@y = x
+		@fill = Gosu::Color.argb(0xff_f00000)
+		@stroke = Gosu::Color.argb(0xff_00ff00)
 		@width = width
 		@height = height
 		@mode = mode
 		@z = z
 		@fillheight = @y + @height
-
 	end
 
 	def draw

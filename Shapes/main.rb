@@ -1,12 +1,16 @@
 require "gosu"
-require_relative("rectangle")
+require_relative 'rect'
+require_relative 'square'
+require_relative 'triangle'
 
 class GameWindow < Gosu::Window
 
 	def initialize
 		super 640, 480
 		self.caption = "Shapes"
-		@rectangle = Rectangle.new(100, 200, 0, 0, 500, 50, 0, :default)
+		@rectangle = Rect.new(10, 20, 50, 20, 0, :default)
+		@square = Square.new(100, 100, 50, 0, :defualt)
+		@triangle = Triangle.new(200, 200, 50, 0, :defualt)
 	end
 
 	def update
@@ -15,6 +19,8 @@ class GameWindow < Gosu::Window
 
 	def draw
 		@rectangle.draw
+		@square.draw
+		@triangle.draw
 	end
 
 	def button_down(id)
